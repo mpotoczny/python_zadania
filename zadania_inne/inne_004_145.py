@@ -8,6 +8,7 @@ while liczba < 0:
     liczba = int(input("Podales liczbe mniejszą od zera. Jeszcze raz! "))
 
 suma = 0
+
 for i in range(liczba + 1):
     suma = suma + i**2
 print(suma)
