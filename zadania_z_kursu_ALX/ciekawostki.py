@@ -1,3 +1,5 @@
+# ZNAJDYWANIE KLUCZA PO WARTOŚCI
+
 dictionary = {'george': 16, 'amber': 19}
 
 for name, age in dictionary.items():
