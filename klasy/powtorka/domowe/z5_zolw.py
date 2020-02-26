@@ -5,11 +5,16 @@ class Zolw:
         self.y = y
         self.kurs = 0
 
+    #obrot dla 4 kierunkow swiata, zgodnie z kierunkiem ruchu zegara
     def idz(self, odleglosc):
-        if self.kurs == 0:
-            self.y -= odleglosc
-        else:
+        if self.kurs == 90:
+            self.x -= odleglosc
+        elif self.kurs == 180:
+            self.y += odleglosc
+        elif self.kurs == 270:
             self.x += odleglosc
+        else: # zawiera warunek gdy self.kurs == 0
+            self.y -= odleglosc
 
     def obroc_sie(self, obrot:0):
         self.kurs = obrot
