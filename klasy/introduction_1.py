@@ -44,8 +44,21 @@ class Matematyka:
 
 print(Matematyka.PI)
 
+print("*" * 60)
+# FUNKCJA RANGE - PRZYPOMNIENIE
 
+# funkcja range jest prawostronnie otwarta, czyli nie bierze w zakres ostatniego elementu
+# i domyślnie startuje od zera
+list1 = list (range(5) ) # [0, 1, 2, 3, 4]
+list2 = list( range(0,5) ) # [0, 1, 2, 3, 4]
+list3 = list( range(1,10) ) # [1, 2, 3, 4, 5, 6, 7, 8, 9]
+print(list1)
+print(list2)
+print(list3)
+print("*" * 60)
 
+cells = [" "] * 5
+print(cells)
 
 
 
