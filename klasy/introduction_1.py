@@ -60,6 +60,22 @@ print("*" * 60)
 cells = [" "] * 5
 print(cells)
 
+print("*" * 60)
+
+def stopifZero(a):
+    if int(a) == 0:
+        return True
+    else:
+        return False
+
+while True:
+    if stopifZero(input('Number ')) is True:
+        break
+    else:
+        continue
+
+
+
 
 
 

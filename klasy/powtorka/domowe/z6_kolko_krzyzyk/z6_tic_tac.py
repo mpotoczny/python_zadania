@@ -1,4 +1,4 @@
-  # Gra w kółko i krzyżyk
+# Gra w kółko i krzyżyk
 
 # Do terminala czyszczenie ekranu
 # import os
@@ -8,8 +8,15 @@ class Board():
     def __init__(self):
         self.cells = [" "] * 10 # 10 pustych miejsc, 9 pol do gry (ignoruję indeks 0)
 
-    def display(self):
-         print(f'{self.cells[1]} | {self.cells[2]} | {self.cells[3]}\n'
+    # def display(self):
+    #      print(f'{self.cells[1]} | {self.cells[2]} | {self.cells[3]}\n'
+    #            f'----------\n'
+    #            f'{self.cells[4]} | {self.cells[5]} | {self.cells[6]}\n'
+    #            f'----------\n'
+    #            f'{self.cells[7]} | {self.cells[8]} | {self.cells[9]}')
+
+    def __str__(self):
+        return (f'{self.cells[1]} | {self.cells[2]} | {self.cells[3]}\n'
                f'----------\n'
                f'{self.cells[4]} | {self.cells[5]} | {self.cells[6]}\n'
                f'----------\n'
@@ -74,7 +81,6 @@ class Board():
     def reset(self):
         self.cells = [" "] * 10 # ponowna inicjalizacja pustej planszy
 
-
 # utworzenie planszy
 board = Board()
 
@@ -84,7 +90,7 @@ def print_header():
 def refresh_screen():
     # os.system("cls")
     print_header()
-    board.display()
+    print(board)
 
 def enter_move():
     choice = int(input(" Please choose 1-9. > "))
@@ -92,6 +98,16 @@ def enter_move():
         return choice
     else:
         raise ValueError("Bad move. Game over.\n")
+
+def new_game() -> bool:
+    option = input("Would you like to play again? (Y/N) > ").upper()
+    if option == "Y":
+        return True
+    elif option == "N":
+        print("Thanks for playing! See you.")
+        return False
+    else:
+        raise ValueError("Bad selection. Good bye.")
 
 while True:
     refresh_screen()
@@ -104,8 +120,7 @@ while True:
 
     if board.is_winner("X"):
         print("\nX wins!\n")
-        play_again = input("Would you like to play again? (Y/N) > ").upper()
-        if play_again == "Y":
+        if new_game() is True:
             board.reset()
             continue
         else:
@@ -114,8 +129,7 @@ while True:
     #Sprawdzenie remisu
     if board.is_tie():
         print("\nTie game!\n")
-        play_again = input("Would you like to play again? (Y/N) > ").upper()
-        if play_again == "Y":
+        if new_game() is True:
             board.reset()
             continue
         else:
@@ -128,8 +142,7 @@ while True:
 
     if board.is_winner("O"):
         print("\nO wins!\n")
-        play_again = input("Would you like to play again? (Y/N) > ").upper()
-        if play_again == "Y":
+        if new_game() is True:
             board.reset()
             continue
         else:
@@ -138,8 +151,7 @@ while True:
     #Sprawdzenie remisu
     if board.is_tie():
         print("\nTie game!\n")
-        play_again = input("Would you like to play again? (Y/N) > ").upper()
-        if play_again == "Y":
+        if new_game() is True:
             board.reset()
             continue
         else:
