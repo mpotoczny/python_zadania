@@ -40,7 +40,7 @@ try:
 
 
 except IndexError:
-    print('usage: python zad_2.py logs.txt')
+    print('usage: python zad_2 logs.txt')
     exit(1)
 except FileNotFoundError:
     print(f'File {file_name} not found!')

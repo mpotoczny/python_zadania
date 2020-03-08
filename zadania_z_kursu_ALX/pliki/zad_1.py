@@ -9,7 +9,7 @@ $ python test.txt
 """
 
 # zeby uruchomic ten program, w terminalu wpisz:
-# python zad_1.py plik.txt
+# python zad_1 plik.txt
 
 import sys
 
