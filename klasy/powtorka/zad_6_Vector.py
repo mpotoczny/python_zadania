@@ -60,8 +60,8 @@ def test2():
         v1 + 3
 
 def test3():
-    v1 = Vector(10,20)
-    v2 = Vector(5,19)
+    v1 = Vector(10, 20)
+    v2 = Vector(5, 19)
     v3 = v1 - v2
     assert v3.x == 5 and v3.y == 1
 
